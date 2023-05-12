@@ -1,24 +1,28 @@
-const form = document.querySelector('form');
-      const table = document.getElementById("myTable").getElementsByTagName("tbody")[0];
+const submit = document.querySelector(".Submit");
+const inputname = document.querySelector("#name").value;
+const inputnumber = document.querySelector("#idNumber").value;
+const country = document.querySelector("#country");
+const language = document.querySelector("#Language");
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+const countryselected = country.value
+const languageselected = language.value
 
-        const name = document.getElementById("name").value;
-        const idNumber = document.getElementById("idNumber").value;
-        const country = document.getElementById("country").value;
-        const language = document.getElementById("language").value;
+const Herocontainer = document.querySelector(".container--hero");
 
-        const newRow = table.insertRow(-1);
-        const nameCell = newRow.insertCell(0);
-        const idNumberCell = newRow.insertCell(1);
-        const countryCell = newRow.insertCell(2);
-        const languageCell = newRow.insertCell(3);
+function Display(inputname = 'nathan', inputnumber, country, language) {
+  const html = `<div class="details">
+  <p class="output">${inputname}</p>
+  <p class="output">${inputnumber}</p>
+  <p class="output">${country}</p>
+  <p class="output">${language}</p>
+</div>`;
+  Herocontainer.insertAdjacentHTML("beforeend", html);
+  inputname,inputnumber,country,language = '';
+}
 
-        nameCell.innerHTML = name;
-        idNumberCell.innerHTML = idNumber;
-        countryCell.innerHTML = country;
-        languageCell.innerHTML = language;
+submit.addEventListener('click', (e) =>{
+    e.preventDefault()
+    console.log(inputname,inputnumber)
+    Display(inputname,inputnumber,countryselected,languageselected)
 
-        form.reset();
-      });
+})

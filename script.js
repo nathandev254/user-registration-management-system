@@ -15,6 +15,7 @@ function Display(inputname = 'nathan', inputnumber, country, language) {
   <p class="output">${inputnumber}</p>
   <p class="output">${country}</p>
   <p class="output">${language}</p>
+  <button class="Delete">Delete</button>
 </div>`;
   Herocontainer.insertAdjacentHTML("beforeend", html);
   inputname,inputnumber,country,language = '';

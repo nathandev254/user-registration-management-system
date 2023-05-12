@@ -16,8 +16,10 @@ header {
 nav {
   display: flex;
   align-items: center;
+  padding: 20px 0;
   justify-content: space-around;
 }
+nav
 a {
   display: block;
   text-decoration: none;
@@ -83,13 +85,23 @@ select:focus {
 /* Table output */
 .container--hero {
   width: 50%;
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 10px 20px;
 }
 .details {
   display: flex;
   gap: 3rem;
   justify-content: space-between;
-  border-bottom: 1px solid #000;
-  margin-top: 20px;
+  color: #fff;
+  padding: 20px 30px;
+  background-color: #202123;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  /* margin-top: 10px; */
+}
+.Delete{
+    background-color: #473bf0;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
 }

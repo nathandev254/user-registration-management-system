@@ -33,6 +33,7 @@ a {
   padding: 10px 20px;
   color: #000;
   border: 2px solid #473bf0;
+  text-transform: uppercase;
   border-radius: 20px;
   transition: all 0.3s;
 }

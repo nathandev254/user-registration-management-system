@@ -1,13 +1,18 @@
 const submit = document.querySelector(".Submit");
 const heroContainer = document.querySelector(".container--hero");
 
+
 submit.addEventListener("click", (e) => {
   e.preventDefault();
-  const inputname = document.querySelector(".name");
-  const inputnumber = document.querySelector(".idNumber");
-  const selectcountry = document.querySelector("#country");
-  const selectlanguage = document.querySelector("#Language");
+
+  // console.log(e)
+  let inputname = document.querySelector(".name");
+  let inputnumber = document.querySelector(".idNumber");
+  let selectcountry = document.querySelector("#country");
+  let selectlanguage = document.querySelector("#Language");
   // console.log(inputname,inputnumber,selectcountry,selectlanguage)
+
+  // console.log(inputname.value)
 
   const name = inputname.value;
   const number = inputnumber.value;
@@ -38,10 +43,17 @@ submit.addEventListener("click", (e) => {
   selectcountry.value = ''
   selectlanguage.value = ''
   }
+
+  Delete = document.querySelector('.Delete')
+  // console.log(Delete)
 });
+ 
+// console.log(Delete)
+
 
 heroContainer.addEventListener("click", function(event) {
   const targetElement = event.target;
+  // console.log(event.target)
   if (targetElement.classList.contains("Delete")) {
     const parentElement = targetElement.parentElement;
     parentElement.remove();
@@ -49,11 +61,13 @@ heroContainer.addEventListener("click", function(event) {
   else if (targetElement.classList.contains("Edit")) {
     const parentElement = targetElement.parentElement;
     const outputs = parentElement.querySelectorAll(".output");
-    console.log(outputs)
-    inputname.value = outputs[0].textContent;
-    inputnumber.value = outputs[1].textContent;
-    selectcountry.value = outputs[2].textContent;
-    selectlanguage.value = outputs[3].textContent;
+    
+    console.log(outputs[0].textContent)
+
+    document.querySelector(".name").value = outputs[0].textContent;
+    document.querySelector(".idNumber").value = outputs[1].textContent;
+    document.querySelector("#country").value = outputs[2].textContent;
+    document.querySelector("#Language").value = outputs[3].textContent;
     parentElement.remove();
   }
 })
